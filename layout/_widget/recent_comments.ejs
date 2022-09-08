@@ -1,0 +1,17 @@
+<% if (theme.comments.commentjs.enable) { %>
+    <div class="widget">
+        <h4 class="dsq-widget-title"><%= __("commentsRecent") %></h4>
+        <div id="comments-recent"></div>
+        <script type="text/javascript">
+            getRecentCommentsList({
+                type: "<%= theme.comments.commentjs.type %>" ? "<%= theme.comments.commentjs.type %>" : "github",
+                user: "<%= theme.comments.commentjs.user %>",
+                repo: "<%= theme.comments.commentjs.repo %>",
+                clientID: "<%= theme.comments.commentjs.clientID %>",
+                clientSecret: "<%= theme.comments.commentjs.clientSecret %>",
+                count: "<%= theme.comments.commentjs.count %>" ? "<%= theme.comments.commentjs.count %>" : 5,
+                commentsRecentTarget: "#comments-recent"
+            });
+        </script>
+    </div>
+<% } %>

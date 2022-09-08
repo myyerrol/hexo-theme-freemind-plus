@@ -1,0 +1,23 @@
+archiveA: Archives
+archiveB: "Archives: %s"
+
+comments: Comments
+commentsGoTo: "Go to comment"
+commentsNo: "No comments yet. Press the button and go to comment now!"
+commentsRecent: "Recent Comments"
+
+contentsNo: "No contents."
+
+page: "Page %d"
+pageArchive: Archives
+pageHome: Home
+pageNext: Next
+pagePrev: Prev
+pageReadMore: "Read More"
+pageTop: Pin
+
+widgetsCategories: Categories
+widgetsLinks: Links
+widgetsRecentPosts: "Recent Posts"
+widgetsSearch: Search
+widgetsTagcloud: "Tag Cloud"

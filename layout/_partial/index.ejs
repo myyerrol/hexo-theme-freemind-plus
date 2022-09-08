@@ -1,0 +1,37 @@
+<div class="row page">
+    <% if (theme.widgets.length) { %>
+    <div class="col-md-9">
+    <% } else { %>
+    <div class="col-md-12">
+    <% } %>
+
+        <%- partial("post/slogan") %>
+        <div id="top_search"></div>
+        <div class="mypage">
+            <% if (page.current == 1) { %>
+                <% site.posts.each(function(item) { %>
+                    <% if (item.top) { %>
+                        <%- partial("post/title_top", { item:item, index:index }) %>
+                        <%- partial("post/entry", { item:item, index:index }) %>
+                    <% } %>
+                <% }); %>
+            <% } %>
+            <% page.posts.each(function(item) { %>
+                <% if (!item.top) { %>
+                    <%- partial("post/title", { item:item, index:index }) %>
+                    <%- partial("post/entry", { item:item, index:index }) %>
+                <% } %>
+            <% }); %>
+        </div>
+
+        <div>
+            <center>
+            <%- partial("index_pagination") %>
+            </center>
+        </div>
+    </div>
+
+    <% if (theme.widgets.length) { %>
+        <%- partial("sidebar") %>
+    <% } %>
+</div>

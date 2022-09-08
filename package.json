@@ -1,0 +1,28 @@
+{
+    "name": "hexo-theme-freemind-plus",
+    "version": "1.0.0",
+    "description": "More powerful bootstrap theme for hexo.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/myyerrol/hexo-theme-freemind-plus.git"
+    },
+    "bugs": {
+        "url": "https://github.com/myyerrol/hexo-theme-freemind-plus/issues"
+    },
+    "keywords": [
+        "hexo",
+        "theme",
+        "blog"
+    ],
+    "author": {
+        "name": "myyerrol",
+        "email": "myyerrol@126.com"
+    },
+    "license": "GPL-3.0",
+    "homepage": "https://github.com/myyerrol/hexo-theme-freemind-plus",
+    "dependencies": {
+        "hexo-renderer-ejs": "*",
+        "hexo-renderer-stylus": "*",
+        "hexo-renderer-marked": "*"
+    }
+}

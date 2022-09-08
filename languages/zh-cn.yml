@@ -1,0 +1,23 @@
+archiveA: 归档
+archiveB: "归档：%s"
+
+comments: 留言
+commentsGoTo: 去留言
+commentsNo: "暂时还没有留言呢，点击下面的按钮去留言吧！"
+commentsRecent: 最新留言
+
+contentsNo: "没有内容。"
+
+page: "第 %d 页"
+pageArchive: 归档
+pageHome: 主页
+pageNext: 下一页
+pagePrev: 上一页
+pageReadMore: 阅读此文
+pageTop: 置顶
+
+widgetsCategories: 分类
+widgetsLinks: 链接
+widgetsRecentPosts: 最新文章
+widgetsSearch: 搜索
+widgetsTagcloud: 标签云

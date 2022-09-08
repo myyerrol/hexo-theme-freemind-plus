@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <%
+        var title = [];
+        if (page.current > 1) {
+            title.push(__("page", page.current));
+        }
+        if (page.title) {
+            title.push(page.title);
+        }
+        if (page.category) {
+            title.push(page.category);
+        }
+        if (page.tag) {
+            title.push(page.tag);
+        }
+        if (page.archive) {
+            if (page.year) {
+                title.push(
+                    __("archiveB", page.year + (page.month ? "/" + page.month : "")));
+            }
+            else {
+                title.push(__("archiveA"));
+            };
+        }
+        title.push(config.title);
+    %>
+    <title><%= title.join(" | ") %></title>
+
+    <% if (config.author) { %>
+    <meta name="author" content="<%= config.author %>" />
+    <% } %>
+
+    <% if (page.description) { %>
+    <meta name="description" content="<%= page.description %>" />
+    <% } else if (config.description) { %>
+    <meta name="description" content="<%= config.description %>" />
+    <% } else if (page.excerpt) { %>
+    <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, "").replace(/\s*$/, "") %>" />
+    <% } else if (page.content) { %>
+    <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, "").replace(/\s*$/, "").substring(0, 150) %>" />
+    <% } %>
+
+    <% if (page.keywords) { %>
+    <meta name="keywords" content="<%= page.keywords %>" />
+    <% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <% if (page.title) { %>
+    <meta property="og:title" content="<%= page.title %>" />
+    <% } %>
+    <meta property="og:site_name" content="<%= config.title %>" />
+
+    <% if (page.cover) { %>
+    <meta property="og:image" content="<%= page.cover %>" />
+    <% } else { %>
+    <meta property="og:image" content="<%= config.cover %>" />
+    <% } %>
+
+    <% if (theme.push.vertify.baidu) { %>
+    <meta name="baidu-site-verification" content="<%= theme.push.vertify.baidu %>">
+    <% } %>
+    <% if (theme.push.vertify.bing) { %>
+    <meta name="msvalidate.01" content="<%= theme.push.vertify.bing %>">
+    <% } %>
+    <% if (theme.push.vertify.google) { %>
+    <meta name="google-site-verification" content="<%= theme.push.vertify.google %>">
+    <% } %>
+
+    <% if (theme.appearance.favicon) { %>
+    <link href="<%- config.root %><%- theme.appearance.favicon %>" rel="icon" />
+    <% } %>
+
+    <link rel="stylesheet" href="<%- config.root %>css/other/themes/<%- theme.appearance.theme %>.css" media="screen" type="text/css">
+
+    <link rel="stylesheet" href="<%- config.root %>css/blog/comments.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/blog/copyright.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/blog/page.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/blog/post.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/blog/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/other/fonts/font-awesome.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/other/fonts/google-fonts.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/other/highlight/highlight.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="<%- config.root %>css/other/highlight/highlight-default.min.css" media="screen" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+    <![endif]-->
+
+    <script src="<%- config.root %>js/other/jquery-2.0.3.min.js"></script>
+
+    <% if (theme.comments.commentjs.enable) { %>
+        <script src="<%- config.root %>js/blog/comments.js"></script>
+        <script src="<%- config.root %>js/other/highlight.min.js"></script>
+        <script src="<%- config.root %>js/other/marked.js"></script>
+        <script src="<%- config.root %>js/other/spin.min.js"></script>
+        <script src="<%- config.root %>js/other/timeago.min.js"></script>
+    <% } %>
+
+    <script>
+        $(document).ready(function() {
+            $("[data-spy='affix']").each(function() {
+                var $spy = $(this)
+                , data = $spy.data()
+                data.offset = data.offset || {}
+                data.offsetBottom && (data.offset.bottom = data.offsetBottom)
+                data.offsetTop && (data.offset.top = data.offsetTop)
+                $spy.affix(data)
+            });
+        });
+    </script>
+
+    <%- partial("post/analytics_baidu") %>
+    <%- partial("post/analytics_google") %>
+</head>

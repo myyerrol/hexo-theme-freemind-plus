@@ -1,0 +1,108 @@
+<%- partial("post/title", { item:item, index:false }) %>
+
+<% if (item.shadow) { %>
+    <style type="text/css">
+        img, video {
+            -webkit-box-shadow:0 0 10px rgba(0, 0, 0, .5);
+            -moz-box-shadow:0 0 10px rgba(0, 0, 0, .5);
+            box-shadow:0 0 10px rgba(0, 0, 0, .5);
+        }
+    </style>
+<% } %>
+
+<div class="row <% if (post) { %>post<% } else { %>page<% } %>">
+    <% if (post) { %>
+    <div id="top_meta"></div>
+    <div class="col-md-9">
+    <% } else { %>
+    <div class="col-md-12">
+    <% } %>
+
+        <span id="busuanzi_container_page_pv">
+            <i class="fa fa-user"></i>
+            <span>阅读量:</span>
+            <span id="busuanzi_value_page_pv">
+                <i class="fa fa-spinner fa-spin"></i>
+            </span>次&nbsp;
+        </span>
+
+        <i class="fa fa-file-word-o"></i>
+        <span>文章字数:</span>
+        <span class="post-count"><% if (about) { %><%= wordcount(JSON.stringify(partial("about"))) %><% } else { %><%= wordcount(item.content) %><% } %></span>字&nbsp;
+
+        <i class="fa fa-clock-o"></i>
+        <span>阅读时长:</span>
+        <span class="post-count"><% if (about) { %><%= min2read(JSON.stringify(partial("about"))) %><% } else { %><%= min2read(item.content) %><% } %></span>分钟
+
+        <p></p>
+
+        <div class="mypage">
+            <% if (item.description) { %>
+            <div class="alert alert-success description">
+                <i class="fa fa-info-circle"></i> <%- markdown(item.description) %>
+            </div>
+            <% } %>
+
+            <% if (about) { %>
+                <%- partial("about") %>
+            <% } else { %>
+                <%- item.content %>
+            <% } %>
+
+            <% if (theme.article.copyright) { %>
+            <div class="copyright">
+                <p>
+                    <span>文章作者：</span>
+                    <a href="/" title="<%= config.title %>"><%= config.author %></a>
+                </p>
+                <p>
+                    <span>最后更新：</span>
+                    <span id="date"></span>
+                    <script type="text/javascript">
+                        function addDatePrefix(num) {
+                            return num < 10 ? "0" + num : num
+                        }
+                        var dateStand = "<%= item.updated %>";
+                        var dateTemp  = new Date(dateStand);
+                        var date = dateTemp.getFullYear() + "年" +
+                                    addDatePrefix((dateTemp.getMonth() + 1)) + "月" +
+                                    addDatePrefix(dateTemp.getDate()) + "日 " +
+                                    addDatePrefix(dateTemp.getHours()) + ":" +
+                                    addDatePrefix(dateTemp.getMinutes()) + ":" +
+                                    addDatePrefix(dateTemp.getSeconds());
+                        $("#date").text(date);
+                    </script>
+                </p>
+                <p>
+                    <span>原始链接：</span>
+                    <a href="./" title="<%= item.title %>"><%= item.permalink %></a>
+                </p>
+                <p>
+                    <span>版权说明：</span>
+                    本博客所有文章除特别声明外，均采用
+                    <i class="fa fa-creative-commons"></i>
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" title="BY-NC-SA 4.0许可协议">BY-NC-SA 4.0许可协议</a>
+                    。获得许可后，要求转载时注明文章出处和网站链接，谢谢！
+                </p>
+            </div>
+            <% } %>
+        </div>
+
+        <div>
+            <center>
+                <%- partial("post/pagination", { page:item }) %>
+            </center>
+        </div>
+
+        <%- partial("post/comments", { page:item }) %>
+    </div>
+
+    <% if (post) { %>
+    <div id="side_meta">
+        <%- partial("post/meta", { item:item }) %>
+    </div>
+    <% } %>
+</div>
+
+<%- partial("post/comments_footer", { page:item }) %>
+<%- partial("post/image_label", { page:item }) %>

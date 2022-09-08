@@ -1,0 +1,71 @@
+<a id="gotop" href="#">
+    <span>▲</span>
+</a>
+
+<script src="<%- config.root %>js/blog/fadetoc.js"></script>
+<script src="<%- config.root %>js/blog/gallery.js"></script>
+<script src="<%- config.root %>js/blog/main.js"></script>
+<script src="<%- config.root %>js/blog/search.js"></script>
+<script src="<%- config.root %>js/other/bootstrap.min.js"></script>
+<script src="<%- config.root %>js/other/jquery.imagesloaded.min.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<% if (config.search) { %>
+<script type="text/javascript">
+    var searchPath = "<%= config.search.path %>";
+    if (searchPath.length == 0) {
+        searchPath = "search.xml";
+    }
+    var path = "<%= config.root %>" + searchPath;
+    searchFunc(path, "local-search-input", "local-search-result");
+</script>
+<% } %>
+
+<% if (theme.appearance.fancybox) { %>
+<link rel="stylesheet" href="<%- config.root %>fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="<%- config.root %>fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    (function($) {
+        $(".fancybox").fancybox();
+    })(jQuery);
+</script>
+<% } %>
+
+<% if ((theme.article.mathjax && page.mathjax)) { %>
+    <%- partial("mathjax") %>
+<% } %>
+
+<% if (theme.comments.commentjs.enable) { %>
+<script>
+    marked.setOptions({
+        highlight: function(code, lang) {
+            return hljs.highlightAuto(code).value;
+        }
+    });
+    function highLighting() {
+        var markdowns = document.getElementsByClassName("markdown");
+        for (var i = 0; i < markdowns.length; i++) {
+            if (markdowns[i].innerHTML) {
+                markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+            }
+        }
+    }
+    window.addEventListener("DOMContentLoaded", highLighting, false);
+    window.addEventListener("load", highLighting, false);
+</script>
+<% } %>
+
+<script>
+    (function() {
+        var bp = document.createElement("script");
+        var curProtocol = window.location.protocol.split(":")[0];
+        if (curProtocol === "https") {
+            bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+        }
+        else {
+            bp.src = "http://push.zhanzhang.baidu.com/push.js";
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
