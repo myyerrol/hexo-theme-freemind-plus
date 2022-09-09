@@ -1,6 +1,36 @@
-# hexo-theme-freemind-plus
+<h2>
+    <p align="center">一款更加强大的基于Boostrap的Hexo主题</p>
+</h2>
 
-## 简介
+<p align="center">
+    <a title="Hexo Version" target="_blank" href="https://hexo.io">
+        <img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D3.0-brightgreen" />
+    </a>
+    <a title="Node Version" target="_blank" href="https://nodejs.org">
+        <img alt="Node Version" src="https://img.shields.io/badge/Node-%3E%3D10.24.1-blue" />
+    </a>
+    <a title="License" target="_blank" href="https://github.com/myyerrol/hexo-theme-freemind-plus/blob/master/LICENSE">
+        <img alt="License" src="https://img.shields.io/github/license/myyerrol/hexo-theme-freemind-plus.svg" />
+    </a>
+    <br/>
+    <br/>
+    <a title="GitHub Watchers" target="_blank" href="https://github.com/myyerrol/hexo-theme-freemind-plus/watchers">
+        <img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/myyerrol/hexo-theme-freemind-plus.svg?label=Watchers&style=social" />
+    </a>
+    <a title="GitHub Stars" target="_blank" href="https://github.com/myyerrol/hexo-theme-freemind-plus/stargazers">
+        <img alt="GitHub Stars" src="https://img.shields.io/github/stars/myyerrol/hexo-theme-freemind-plus.svg?label=Stars&style=social" />
+    </a>
+    <a title="GitHub Forks" target="_blank" href="https://github.com/myyerrol/hexo-theme-freemind-plus/network/members">
+        <img alt="GitHub Forks" src="https://img.shields.io/github/forks/myyerrol/hexo-theme-freemind-plus.svg?label=Forks&style=social" />
+    </a>
+</p>
+
+<p align="center">🇨🇳 中文简体  |  <a title="English" href="README.md">🇬🇧 English</a></p>
+
+<p align="center">
+    <span>预览：</span>
+    <a href="https://myyerrol.github.io">myyerrol的个人网站</a>
+</p>
 
 ## 特性
 
