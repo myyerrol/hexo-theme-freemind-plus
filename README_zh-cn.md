@@ -1,6 +1,6 @@
-<h2>
+<h1>
     <p align="center">一款更加强大的基于Boostrap的Hexo主题</p>
-</h2>
+</h1>
 
 <p align="center">
     <a title="Hexo Version" target="_blank" href="https://hexo.io">
@@ -12,7 +12,6 @@
     <a title="License" target="_blank" href="https://github.com/myyerrol/hexo-theme-freemind-plus/blob/master/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/myyerrol/hexo-theme-freemind-plus.svg" />
     </a>
-    <br/>
     <br/>
     <a title="GitHub Watchers" target="_blank" href="https://github.com/myyerrol/hexo-theme-freemind-plus/watchers">
         <img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/myyerrol/hexo-theme-freemind-plus.svg?label=Watchers&style=social" />
