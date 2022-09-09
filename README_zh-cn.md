@@ -28,7 +28,7 @@
 
 <p align="center">
     <span>预览：</span>
-    <a href="https://myyerrol.github.io">myyerrol的个人网站</a>
+    <a target="_blank" href="https://myyerrol.github.io">myyerrol的个人网站</a>
 </p>
 
 ## 特性

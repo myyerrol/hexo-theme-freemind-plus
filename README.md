@@ -28,7 +28,7 @@
 
 <p align="center">
     <span>Preview: </span>
-    <a href="https://myyerrol.github.io">myyerrol's personal website</a>
+    <a target="_blank" href="https://myyerrol.github.io">myyerrol's personal website</a>
 </p>
 
 ## Features
