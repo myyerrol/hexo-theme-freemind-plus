@@ -2,6 +2,8 @@
     <p align="center">An more powerful bootstrap theme for hexo</p>
 </h1>
 
+![screenshot](https://myyerrol-1257317595.cos.ap-beijing.myqcloud.com/projects/hexo-theme-freemind-plus/screenbot_1.png)
+
 <p align="center">
     <a title="Hexo Version" target="_blank" href="https://hexo.io">
         <img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D3.0-brightgreen" />
