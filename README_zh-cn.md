@@ -1,3 +1,7 @@
+<p align="center">
+    <img alt="Logo" src="https://myyerrol-1257317595.cos.ap-beijing.myqcloud.com/projects/hexo-theme-freemind-plus/logo.png" width="150">
+</p>
+
 <h1>
     <p align="center">一款更加强大的基于Boostrap的Hexo主题</p>
 </h1>
