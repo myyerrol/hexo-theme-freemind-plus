@@ -3,7 +3,7 @@
 </p>
 
 <h1>
-    <p align="center">An more powerful bootstrap theme for hexo</p>
+    <p align="center">A more powerful bootstrap theme for hexo</p>
 </h1>
 
 ![screenshot](https://myyerrol-1257317595.cos.ap-beijing.myqcloud.com/projects/hexo-theme-freemind-plus/screenbot_1.png)
